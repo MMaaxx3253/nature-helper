@@ -8,136 +8,33 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/css/style.css" />
-    <title>Портфолио</title>
+    <title>Language/Язык</title>
+	<style>
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        body {
+            display: table;
+        }
+
+        .my-block {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        </style>
   </head>
   <body>
-    <header class="header">
-      <nav class="header__nav main-nav">
-        <ul class="main-nav__list main-list">
-          <li class="main-list__item list-item">
-            <a class="list-item__link" href="#home">Верх</a>
-          </li>
-          <li class="main-list__item list-item">
-            <a class="list-item__link" href="#about">О бедствиях</a>
-          </li>
-          <li class="main-list__item list-item">
-            <a class="list-item__link" href="#whatwecando">Что можно сделать?</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main">
-      <!-- Секция превью -->
-      <section class="main__home home" id="home">
-        <h1 class="home__title">Стихийные бедствия</h1>
-        <p class="home__subtitle">Это сайт о том как происходят стихийные бедствия и что вы можете сделать для того что-бы это не случилось</p>
-      </section>
-      <!-- Секция с рассказом о себе -->
-      <section class="main__about about" id="about">
-        <h2 class="about__title">Что это такое?</h2>
-        <div class="about__info info-block">
-          <p class="info-block__text">
-            Стихийное беедствие — разрушительное явление или процесс, в результате которого может возникнуть угроза жизни и здоровью людей, могут разрушиться дома, магазины и сама природа может пострадать (землетресения)
-          </p>
-          
-        </div>
-        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://ru.wikipedia.org/wiki/%25D0%25A1%25D1%2582%25D0%25B8%25D1%2585%25D0%25B8%25D0%25B9%25D0%25BD%25D0%25BE%25D0%25B5_%25D0%25B1%25D0%25B5%25D0%25B4%25D1%2581%25D1%2582%25D0%25B2%25D0%25B8%25D0%25B5&ved=2ahUKEwi4ybLB5v6HAxXC_7sIHWxFKlYQmhN6BAg0EAI&usg=AOvVaw2YirYR3dVyWd39GhtmsJwh" style="font-weight: bold;">Источник (настоящий текст)</a>
-      </section>
-      <!-- Секция со скиллами -->
-      <section class="main__skills skills" id="whatwecando">
-        <h2 class="skills__title">Как мы можем это предотвратить?</h2>
-        <form action="/" method="POST">
-          <ul class="skills__list skills-list">
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/python.png"
-                alt="python"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">Python счётчик энергии</span>
-              <input class="skill__button" type="submit" name="button_python" value="SHOW PROJECT">
-            </li>
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/discord.png"
-                alt="discord"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">Дискорд бот</span>
-              <input class="skill__button" type="submit" name="button_discord" value="SHOW PROJECT">
-            </li>
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/html.png"
-                alt="html"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">HTML</span>
-              <input class="skill__button" type="submit" name="button_html" value="SHOW PROJECT">
-            </li>
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/db.webp"
-                alt="SQL"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">MySQL (дневник)</span>
-              <input class="skill__button" type="submit" name="button_db" value="SHOW PROJECT">
-            </li>
-          </ul>
-        </form>
-        {% if button_python%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/pycalcu.png" alt="project" width="500">
-              <a class="project__link" href="">Открыть на сайт-хранилище</a>
-          </div>
-        {% endif %}
-        {% if button_discord%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/dsbot1.png" alt="project" width="500">
-              <img class="project__img" src="../static/img/dsbot2.png" alt="project" width="500">
-              <a class="project__link" href="">Открыть на сайт-хранилище</a>
-          </div>
-        {% endif %}
-        {% if button_html%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/basehtml.png" alt="project" width="500">
-              <a class="project__link" href="">Открыть на сайт-хранилище</a>
-          </div>
-        {% endif %}
-        {% if button_db%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/diary1.png" alt="project" width="500">
-              <img class="project__img" src="../static/img/diary2.png" alt="project" width="500">
-              <a class="project__link" href="">Открыть на сайт-хранилище</a>
-          </div>
-        {% endif %}
-      </section>
-      <!-- Секция с формой обратной связи -->
-      <section class="main__feedback feedback" id="feedback">
-        <h2 class="feedback__title">Обратная связь (не работать)</h2>
-        <form action="" method="POST" class="feedback__form form">
-          <label for="email">
-            <input type="email" class="form__input" name="email" id="email" placeholder="Введите E-mail" required>
-          </label>
-          <label for="text">
-            <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Комментарий"></textarea>
-          </label>
-          <button class="form__button" type="submit">ОТПРАВИТЬ</button>
-        </form>
-      </section>
-    </main>
-    <!-- Подвал для ссылок на соц-сети -->
-    <footer>
-
-    </footer>
+	<div class="my-block">
+		<p>What is your language?/Какой ваш язык?</p>
+		<p>&nbsp;</p>
+		<u><a href="/rus" class="font-weight: bold;">Русский</a></u>
+		<u><a href="/eng" class="font-weight: bold;">English</a></u>
+    </div>
   </body>
 </html>
