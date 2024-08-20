@@ -1,5 +1,6 @@
 from defs import *
 from flask import Flask, render_template,request, redirect
+import codecs
 startup()
 print("LOG beginning...")
 print("")
@@ -11,41 +12,29 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/eng',methods=['POST'])
-def index():
+@app.route('/eng',methods=['GET','POST'])
+def eng():
     return render_template('english.html')
-def submit_form():
-    email = request.form['email']
-    comment = request.form['comment']
-    with open('forms.txt', 'a',) as f:
-            f.write(email+'\n')
-            f.write(comment+'\n')
-    return render_template('forms.text',
-                           email=email,
-                           comment=comment
-                           )
     
-@app.route('/rus',methods=['POST'])
-def index():
+@app.route('/rus',methods=['GET','POST'])
+def rus():
     return render_template('russian.html')
+
+@app.route('/submit', methods=['GET','POST'])
 def submit_form():
     email = request.form['email']
     comment = request.form['comment']
-    with open('forms.txt', 'a',) as f:
+    with codecs.open('forms.text', 'a', 'utf-8') as f:
             f.write(email+'\n')
             f.write(comment+'\n')
-    return render_template('forms.text',
+            f.write("-------------"+'\n')
+    return render_template('submit.html',
                            email=email,
                            comment=comment
                            )
-
-@app.route('/submit',methods=['POST'])
-
 
 if __name__ == "__main__":
     app.run()
-else:
-    print("ERROR: Names does not match, exiting")
 print("")
 print("LOG ending, exit in 3 seconds...")
 time.sleep(3)

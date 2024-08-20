@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Language/Язык</title>
+	<style>
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        body {
+            display: table;
+        }
+
+        .my-block {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        </style>
+  </head>
+  <body>
+  {% block content %}
+	<div class="my-block">
+		<p>Feedback sent successfully/Форма успешно отправлена</p>
+		<p>&nbsp;</p>
+    <p>Ваша почта/You'r email: {{email}}</p>
+    <p>Ваш комментарий/You'r comment: {{comment}}</p>
+		<u><a href="/rus" class="font-weight: bold;">На главную</a></u>
+		<u><a href="/eng" class="font-weight: bold;">Go to main page</a></u>
+    </div>
+  {% endblock %}
+  </body>
+</html>
