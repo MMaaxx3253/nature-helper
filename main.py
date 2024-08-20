@@ -11,15 +11,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/eng')
+@app.route('/eng',methods=['POST'])
 def index():
     return render_template('english.html')
-    
-@app.route('/rus')
-def index():
-    return render_template('russian.html')
-
-@app.route('/submit',methods=['POST'])
 def submit_form():
     email = request.form['email']
     comment = request.form['comment']
@@ -30,6 +24,23 @@ def submit_form():
                            email=email,
                            comment=comment
                            )
+    
+@app.route('/rus',methods=['POST'])
+def index():
+    return render_template('russian.html')
+def submit_form():
+    email = request.form['email']
+    comment = request.form['comment']
+    with open('forms.txt', 'a',) as f:
+            f.write(email+'\n')
+            f.write(comment+'\n')
+    return render_template('forms.text',
+                           email=email,
+                           comment=comment
+                           )
+
+@app.route('/submit',methods=['POST'])
+
 
 if __name__ == "__main__":
     app.run()
