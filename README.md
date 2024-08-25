@@ -31,7 +31,7 @@ pip install flask #необходим для работы сайта и форм
 
 ![image](https://github.com/user-attachments/assets/a42fa911-395e-41fd-af78-6a2cdf9c7acb)
 
-Далее запустите файл с помощью стерли справа сверху (убедитесь что в vscode у вас есть расширение Python)
+Далее запустите файл с помощью стрелки справа сверху (убедитесь что в vscode у вас есть расширение Python)
 
 ![image](https://github.com/user-attachments/assets/90bac20f-b3a1-41b4-9667-ce2596aef1b4)
 
