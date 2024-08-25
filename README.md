@@ -17,7 +17,6 @@
 
 ```bash
 git clone https://github.com/MMaaxx3253/nature-helper
-cd nature-helper
 ```
 Затем впишите следующее:
 ```bash
